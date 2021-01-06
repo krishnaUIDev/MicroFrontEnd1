@@ -1,17 +1,18 @@
-import React from "react";
-import { Switch, Route, Router } from "react-router-dom";
+import React from 'react';
+import { Switch, Route, Router } from 'react-router-dom';
 import {
-  createGenerateClassName,
   StylesProvider,
-} from "@material-ui/core/styles";
+  createGenerateClassName,
+} from '@material-ui/core/styles';
 
-import Landing from "./components/Landing";
-import Pricing from "./components/Pricing";
+import Landing from './components/Landing';
+import Pricing from './components/Pricing';
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "marketing",
+  productionPrefix: 'ma',
 });
-const App = ({ history }) => {
+
+export default ({ history }) => {
   return (
     <div>
       <StylesProvider generateClassName={generateClassName}>
@@ -25,5 +26,3 @@ const App = ({ history }) => {
     </div>
   );
 };
-
-export default App;

@@ -15,7 +15,7 @@ const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} onSignIn={onSignIn} />, el);
+  ReactDOM.render(<App onSignIn={onSignIn} history={history} />, el);
 
   return {
     onParentNavigate({ pathname: nextPathname }) {
@@ -31,7 +31,7 @@ const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
 // If we are in development and in isolation,
 // call mount immediately
 if (process.env.NODE_ENV === "development") {
-  const devRoot = document.querySelector("#_auths-root");
+  const devRoot = document.querySelector("#_auth-dev-root");
 
   if (devRoot) {
     mount(devRoot, { defaultHistory: createBrowserHistory() });

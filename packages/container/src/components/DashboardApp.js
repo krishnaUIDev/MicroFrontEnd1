@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from "react";
-import { mount } from "dashboard/DashboardApp";
+import { mount } from 'dashboard/DashboardApp';
+import React, { useRef, useEffect } from 'react';
 
 export default () => {
   const ref = useRef(null);
+
   useEffect(() => {
     mount(ref.current);
   }, []);
