@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { mount } from "marketing/MarketingApp";
+import { mount } from "auths/AuthsApp";
 import { useHistory } from "react-router-dom";
 
 export default () => {
@@ -13,6 +13,9 @@ export default () => {
         if (pathName !== nextPathname) {
           history.push(nextPathname);
         }
+      },
+      onSignIn: () => {
+        console.log("user sigined in");
       },
     });
     history.listen(onParentNavigate);
